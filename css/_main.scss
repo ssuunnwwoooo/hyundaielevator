@@ -1,0 +1,179 @@
+.TopBanner {
+    display: flex;
+    align-items: center;
+    height: 150rem;
+    background: $color-main;
+    overflow: hidden;
+
+    &.on {
+        height: 0;
+        transition: height .3s;
+    }
+
+    .inner {
+        position: relative;
+        width: $size-pc;
+        color: $color-w;
+
+        strong {
+            display: block;
+            font-size: 32rem;
+            font-weight: 700;
+            margin: 0 0 8rem 0;
+        }
+
+        span {
+            position: absolute;
+            inset: -16rem 0 auto auto;
+            user-select: none;
+            cursor: pointer;
+
+            font-variation-settings: 'wght' 100;
+            font-size: 32rem;
+        }
+    }
+}
+
+// header
+
+* {
+    outline: 1px solid --rgb(38, 0, 255);
+}
+
+.Header {
+    position: sticky;
+    top: 0;
+    z-index: 999;
+
+
+    .header_wrap {
+        display: flex;
+        align-items: center;
+
+        position: absolute;
+        top: auto;
+        left: 0;
+        right: 0;
+        padding: 0 50rem;
+
+        background: rgba($color: #000000, $alpha: 0.2);
+
+        h1 {
+            flex: 0 0 calc((100% - 1170px)/2);
+
+            a {
+                display: block;
+                width: 188rem;
+                height: 22rem;
+                margin: 0 30px 0 0;
+                background: url(../images/logo01.png);
+            }
+        }
+
+        .gnb>ul {
+            display: flex;
+            gap: 80rem;
+
+            a {
+                position: relative;
+                display: block;
+                font-size: 20rem;
+                font-weight: 500;
+                line-height: 100rem;
+                color: $color-w;
+
+                transition: .5s;
+
+                &::after {
+                    content: "";
+                    position: absolute;
+                    bottom: 0;
+                    left: 50%;
+                    transform: translate(-50%, 0);
+                    width: 0;
+                    height: 1rem;
+                    background: $color-main;
+                }
+
+                &:hover::after {
+                    width: 100%;
+                    transition: .3s;
+
+                }
+            }
+        }
+
+        .util_area {
+            margin: 0 0 0 auto;
+        }
+    }
+
+    &.on {
+
+        .header_wrap {
+            background: rgba($color: $color-w, $alpha: 1);
+
+            h1 {
+                a {
+                    background: url(../images/logo02.png);
+                }
+            }
+
+            .gnb>ul {
+                a {
+                    color: $color-body;
+                    line-height: 64rem;
+                }
+            }
+        }
+
+
+    }
+
+}
+
+.MainVisual {
+    .main_slide {
+        .itm {
+            height: calc(100vh - 150rem);
+        }
+
+        .itm01 {
+            background: url(../images/visual01.jpg) center top/cover;
+        }
+
+        .itm02 {
+            background: url(../images/visual02.jpg) center top/cover;
+        }
+
+        .itm03 {
+            background: url(../images/visual03.png) center top/cover;
+        }
+
+        .slogan {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            max-width: 1200rem;
+            width: 100%;
+            padding: 0 15rem;
+        }
+
+        .itm {
+            &.on {
+                strong {
+                    color: $color-w;
+                }
+            }
+        }
+    }
+
+    .list {
+        li {
+            &.on {
+                color: $color-main;
+            }
+        }
+    }
+}

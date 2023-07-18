@@ -1,0 +1,8 @@
+@import './variable';
+@import './mixins';
+@import './reset';
+
+@import './main'
+
+// 1. style.scss에 모든 scss를 import로 불러온다. / 정렬 순서도 매우 중요
+// 2. 하단 아래에 watching 버튼을 누르면 css / css.map 파일이 생김
